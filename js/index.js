@@ -76,7 +76,7 @@ for (let i = 0; i < entradas.length; i++) {
                                 <p class="card-text">${entradas[i].lugar}</p>
                             </div>
                             <div class="col text-center">
-                                <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar">Mas Info</button>
+                                <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar">Agregar al Carrito</button>
                             </div>
                         </div>
                     </div>
