@@ -20,7 +20,7 @@ const ticket4 = new Ticket(4, "Celia Cruz", "Por primera vez en Santa Rosa. A dÃ
 const entradas = [];
 entradas.push(ticket1,ticket2,ticket3,ticket4);
 
-const ticketComprado = [];
+let ticketComprado = [];
 
 /* Muestra todos los recitales */
 function renderRecitalesTodos(){
@@ -56,6 +56,7 @@ function renderRecitalesTodos(){
 
   document.getElementById("cardJsTodos").innerHTML = htmlTodos;
 }
+renderRecitalesTodos();
 
 function agregarAlCarrito(id){
   const selectedTicket = entradas.find((entrada) => entrada.id == id);
@@ -63,10 +64,10 @@ function agregarAlCarrito(id){
   renderCarrito();
 }
 
-function eliminarCart(){
+function eliminarCart(id){
+  ticketComprado.splice(id, 1);
   renderCarrito();
 }
-renderRecitalesTodos();
 
 /* Muestra los recitales a los accedera */
 function renderCarrito(){
@@ -91,7 +92,7 @@ function renderCarrito(){
                                   <p class="card-text">${ticketComprado[i].lugar}</p>
                               </div>
                               <div class="col text-center">
-                                  <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar" onclick="eliminarCart(${ticketComprado[i].id});">Eliminar</button>
+                                  <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar" onclick="eliminarCart(${i});">Eliminar</button>
                               </div>
                           </div>
                       </div>
